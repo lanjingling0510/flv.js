@@ -24,6 +24,7 @@ import MozChunkedLoader from './xhr-moz-chunked-loader.js';
 import MSStreamLoader from './xhr-msstream-loader.js';
 import RangeLoader from './xhr-range-loader.js';
 import WebSocketLoader from './websocket-loader.js';
+import XYLLoader from './xy-loader.js';
 import RangeSeekHandler from './range-seek-handler.js';
 import ParamSeekHandler from './param-seek-handler.js';
 import {RuntimeException, IllegalStateException, InvalidArgumentException} from '../utils/exception.js';
@@ -237,17 +238,19 @@ class IOController {
     }
 
     _selectLoader() {
-        if (this._isWebSocketURL) {
-            this._loaderClass = WebSocketLoader;
-        } else if (FetchStreamLoader.isSupported()) {
-            this._loaderClass = FetchStreamLoader;
-        } else if (MozChunkedLoader.isSupported()) {
-            this._loaderClass = MozChunkedLoader;
-        } else if (RangeLoader.isSupported()) {
-            this._loaderClass = RangeLoader;
-        } else {
-            throw new RuntimeException('Your browser doesn\'t support xhr with arraybuffer responseType!');
-        }
+        // if (this._isWebSocketURL) {
+        //     this._loaderClass = WebSocketLoader;
+        // } else if (FetchStreamLoader.isSupported()) {
+        //     this._loaderClass = FetchStreamLoader;
+        // } else if (MozChunkedLoader.isSupported()) {
+        //     this._loaderClass = MozChunkedLoader;
+        // } else if (RangeLoader.isSupported()) {
+        //     this._loaderClass = RangeLoader;
+        // } else {
+        //     throw new RuntimeException('Your browser doesn\'t support xhr with arraybuffer responseType!');
+        // }
+
+        this._loaderClass = XYLLoader;
     }
 
     _createLoader() {
