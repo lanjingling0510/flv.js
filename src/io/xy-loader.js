@@ -56,7 +56,12 @@ class XYLoader extends BaseLoader {
 
         this._loadPromise
             .then(({ XYLive, XYLiveEvent }) => {
-                const video = document.getElementsByName('videoElement')[0];
+                const video = this._config.mediaElement;
+
+                if (!video) {
+                    throw new Error('please call flv.attachMediaElement to bind video element');
+                }
+
                 this._xylive = new XYLive({
                     url: dataSource.url,
                     video: video

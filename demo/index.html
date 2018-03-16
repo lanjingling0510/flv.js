@@ -38,7 +38,7 @@
         </div>
         <div class="video-container">
             <div>
-                <video name="videoElement" class="centeredVideo" controls autoplay>
+                <video name="videoElement1" class="centeredVideo" controls autoplay>
                     Your browser is too old which doesn't support HTML5 video.
                 </video>
             </div>
@@ -90,7 +90,7 @@
         }
 
         function flv_load_mds(mediaDataSource) {
-            var element = document.getElementsByName('videoElement')[0];
+            var element = document.getElementsByName('videoElement1')[0];
             if (typeof player !== "undefined") {
                 if (player != null) {
                     player.unload();

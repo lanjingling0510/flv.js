@@ -136,6 +136,8 @@ class FlvPlayer {
         mediaElement.addEventListener('stalled', this.e.onvStalled);
         mediaElement.addEventListener('progress', this.e.onvProgress);
 
+        this._config.mediaElement = mediaElement;
+
         this._msectl = new MSEController(this._config);
 
         this._msectl.on(MSEEvents.UPDATE_END, this._onmseUpdateEnd.bind(this));
