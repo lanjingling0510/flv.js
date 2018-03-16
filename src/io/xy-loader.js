@@ -29,7 +29,7 @@ class XYLoader extends BaseLoader {
 
         const reg = /^https:/;
         const protocal = reg.test(global.document.location.href) ? 'https' : 'http';
-        const libUrl = protocal + '://fcrc-video.xycdn.com/h5/test/xyvp-live.js';
+        const libUrl = protocal + '://fcrc-video.xycdn.com/quanmin/xyvp-live.js';
         this._loadPromise = XYVPLoader.promise(libUrl);
 
         this._xylive = null;

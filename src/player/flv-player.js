@@ -178,6 +178,7 @@ class FlvPlayer {
             this._mediaElement.removeEventListener('canplay', this.e.onvCanPlay);
             this._mediaElement.removeEventListener('stalled', this.e.onvStalled);
             this._mediaElement.removeEventListener('progress', this.e.onvProgress);
+            this._config.mediaElement = null;
             this._mediaElement = null;
         }
         if (this._msectl) {

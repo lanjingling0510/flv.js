@@ -23,6 +23,8 @@ export const defaultConfig = {
 
     isLive: false,
 
+    enableP2sp: false,
+
     lazyLoad: true,
     lazyLoadMaxDuration: 3 * 60,
     lazyLoadRecoverDuration: 30,
